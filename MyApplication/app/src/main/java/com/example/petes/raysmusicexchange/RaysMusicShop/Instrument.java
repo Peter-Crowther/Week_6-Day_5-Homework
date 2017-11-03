@@ -6,12 +6,14 @@ import com.example.petes.raysmusicexchange.Behaviours.Playable;
  * Created by petes on 03/11/2017.
  */
 
-abstract public class Instrument implements Playable {
+abstract public class Instrument extends ItemsForSale implements Playable {
 
     protected String type;
     protected String colour;
 
-    public Instrument(String type, String colour) {
+
+    public Instrument(String description, double priceBought, double priceSold, String type, String colour) {
+        super(description, priceBought, priceSold);
         this.type = type;
         this.colour = colour;
     }

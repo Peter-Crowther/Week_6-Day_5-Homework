@@ -7,6 +7,7 @@ import com.example.petes.raysmusicexchange.Behaviours.Playable;
  */
 
 public class Flute extends Instrument implements Playable {
+
     int numberOfValves;
 
     public Flute(String type, String colour, int numberOfValves) {

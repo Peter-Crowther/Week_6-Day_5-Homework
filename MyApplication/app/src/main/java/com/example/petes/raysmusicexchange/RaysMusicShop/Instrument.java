@@ -18,6 +18,7 @@ abstract public class Instrument extends ItemsForSale implements Playable {
         this.colour = colour;
     }
 
+
     public String getType() {
         return this.type;
     }

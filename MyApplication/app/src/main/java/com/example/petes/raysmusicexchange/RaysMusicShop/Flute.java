@@ -1,19 +1,26 @@
 package com.example.petes.raysmusicexchange.RaysMusicShop;
 
-import com.example.petes.raysmusicexchange.Behaviours.Playable;
 
 /**
  * Created by petes on 03/11/2017.
  */
 
-public class Flute extends Instrument implements Playable {
+public class Flute extends Instrument {
 
-    int numberOfValves;
+    int numberOfKeyHoles;
 
-    public Flute(String type, String colour, int numberOfValves) {
-        super(type, colour);
-        this.numberOfValves = numberOfValves;
+
+    public Flute(String description, double priceBought, double priceSold, String type, String colour, int numberOfKeyHoles) {
+        super(description, priceBought, priceSold, type, colour);
+        this.numberOfKeyHoles = numberOfKeyHoles;
     }
+
+
+    public int getNumberOfKeyHoles() {
+        return this.numberOfKeyHoles;
+    }
+
+
 
     @Override
     public String play() {

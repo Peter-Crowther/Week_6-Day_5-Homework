@@ -15,9 +15,21 @@ abstract public class ItemsForSale implements Sellable{
     public ItemsForSale(String description, double priceBought, double priceSold) {
         this.priceBought = priceBought;
         this.priceSold = priceSold;
+        this.description = description;
+    }
+
+    public String getDescription(){
+        return this.description;
     }
 
 
+    public double getPriceBought() {
+        return this.priceBought;
+    }
+
+    public double getPriceSold() {
+        return this.priceSold;
+    }
     @Override
     public double calculateMarkup() {
         return priceSold - priceBought;

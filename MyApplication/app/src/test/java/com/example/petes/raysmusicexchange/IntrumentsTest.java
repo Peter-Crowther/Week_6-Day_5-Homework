@@ -14,7 +14,7 @@ import static junit.framework.Assert.assertEquals;
  * Created by petes on 03/11/2017.
  */
 
-public class FluteTest {
+public class IntrumentsTest {
     Flute flute;
     Guitar guitar;
     Trumpet trumpet;
@@ -76,6 +76,20 @@ public class FluteTest {
     @Test
     public void hasValves() {
         assertEquals(3, trumpet.getNumberOfValves());
+    }
+
+    @Test
+    public void canPlay() {
+        assertEquals("Rootatoot", trumpet.play());
+        assertEquals("Flootytoot!", flute.play());
+        assertEquals("Twang", guitar.play());
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+    assertEquals(75, flute.calculateMarkup(), 0.001);
+    assertEquals(40, guitar.calculateMarkup(), 0.001);
+    assertEquals(30, trumpet.calculateMarkup(), 0.001);
     }
 
 }

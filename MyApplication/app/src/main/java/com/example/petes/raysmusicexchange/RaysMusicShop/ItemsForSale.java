@@ -34,4 +34,6 @@ abstract public class ItemsForSale implements Sellable{
     public double calculateMarkup() {
         return priceSold - priceBought;
     }
+
+
 }

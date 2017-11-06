@@ -34,4 +34,14 @@ public class Shop {
     public int getArrayLength() {
         return stock.size();
     }
+
+    public double getTotalProfit() {
+        double total = 0;
+        for (Sellable item : stock) {
+            total += item.calculateMarkup();
+        }
+        return total;
+
+    }
+
 }

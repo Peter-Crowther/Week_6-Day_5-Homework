@@ -1,7 +1,6 @@
 package com.example.petes.raysmusicexchange;
 
-import com.example.petes.raysmusicexchange.RaysMusicShop.Guitar;
-import com.example.petes.raysmusicexchange.RaysMusicShop.Shop;
+import com.example.petes.raysmusicexchange.RaysMusicShop.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,11 +15,17 @@ public class TestRaysMusicShop {
 
     Shop shop;
     Guitar guitar;
+    Trumpet trumpet;
+    Flute flute;
+    SheetMusic sheetMusic;
 
     @Before
     public void before() {
         shop = new Shop("Rays");
-        guitar = new Guitar("Guitar", 300, 500, "Base", "Red", 4);
+        flute = new Flute("Flute", 150, 225, "Piccolo", "Silver", 16);
+        trumpet = new Trumpet("Trumpet", 120, 150, "Bass", "Bronze", 3);
+        guitar = new Guitar("Guitar", 80, 120, "Acoustic", "Red", 5);
+        sheetMusic = new SheetMusic("Sheetmusic", 4, 10, "The Eagles", "Hotel California");
     }
 
     @Test
@@ -45,6 +50,15 @@ public class TestRaysMusicShop {
         assertEquals(1, shop.getArrayLength());
         shop.removeFromStock(guitar);
         assertEquals(0, shop.getArrayLength());
+    }
+
+    @Test
+    public void canCaclulateTotalProfit() {
+        shop.addToStock(guitar);
+        shop.addToStock(flute);
+        shop.addToStock(trumpet);
+        shop.addToStock(sheetMusic);
+        assertEquals(151, shop.getTotalProfit(), 0.001);
     }
 
 

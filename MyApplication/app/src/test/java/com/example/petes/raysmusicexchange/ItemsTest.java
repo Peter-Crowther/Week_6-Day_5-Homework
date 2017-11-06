@@ -1,6 +1,6 @@
 package com.example.petes.raysmusicexchange;
 
-import com.example.petes.raysmusicexchange.RaysMusicShop.SheetMusic;
+import com.example.petes.raysmusicexchange.RaysMusicShop.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import static junit.framework.Assert.assertEquals;
  * Created by petes on 05/11/2017.
  */
 
-public class SheetMusicTest {
+public class ItemsTest {
 
     SheetMusic sheetMusic;
 
@@ -43,6 +43,11 @@ public class SheetMusicTest {
     @Test
     public void hasName() {
         assertEquals("Hotel California", sheetMusic.getName());
+    }
+
+    @Test
+    public void canCalculateMarkup() {
+        assertEquals(6, sheetMusic.calculateMarkup(), 0.001);
     }
 
 
